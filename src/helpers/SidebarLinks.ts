@@ -22,7 +22,7 @@ import clipboard from "../assets/icons/clipboard-list 1.svg";
 interface SidebarLink {
     id: number;
     icon?: string;
-    linkto:"/",
+    linkto:string,
     title: string;
     class?: string;
   }
@@ -37,7 +37,7 @@ interface SidebarLink {
   {
     id: 1,
     icon: home,
-    linkto:"/",
+    linkto:"/dashboard",
     title: "Dashboard",
   },
   {

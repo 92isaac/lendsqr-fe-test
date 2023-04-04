@@ -62,10 +62,14 @@ aside .sidebar__links .link-header {
   opacity: 1;
   color: #545f7d;
 }
-aside .sidebar__links nav {
+aside .sidebar__links .nav__items {
   width: 75%;
   height: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
+}
+
+.active {
+  background: rgba(57, 205, 204, 0.06);
 }/*# sourceMappingURL=Sidebar.css.map */

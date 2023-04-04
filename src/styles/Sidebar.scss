@@ -50,9 +50,9 @@ aside {
       .links {
         height: 40px;
         cursor: pointer;
-      }
-      .links:hover {
-        background: rgba(57, 205, 204, 0.06);
+        &:hover {
+          background: rgba(57, 205, 204, 0.06);
+        }
       }
       .link-header {
         font-weight: 500;
@@ -62,7 +62,7 @@ aside {
         opacity: 1;
         color: #545f7d;
       }
-      nav {
+      .nav__items {
         width: 75%;
         height: 100%;
         margin: 0 auto;
@@ -72,3 +72,6 @@ aside {
     }
   }
   
+  .active{
+    background: rgba(57, 205, 204, 0.06);
+  }

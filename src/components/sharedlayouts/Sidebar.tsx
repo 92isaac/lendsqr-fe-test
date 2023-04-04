@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo.svg";
 import "../../styles/Sidebar.scss";
 import { sidebarLinks } from "../../helpers/SidebarLinks";
@@ -26,17 +26,19 @@ const Sidebar: React.FC = () => {
         <ul>
           {sidebarLinks.map((sidebarLink: SidebarLink) => {
             return (
-              <li key={sidebarLink.id} className={sidebarLink?.class}>
-                <nav>
-                  <NavLink to={sidebarLink?.linkto}>
-                  {sidebarLink?.icon && (
-                    <div className="icons">
-                      <img src={sidebarLink?.icon} alt="" />
-                    </div>
-                  )}
+              <li key={sidebarLink?.id} className={sidebarLink?.class}>
+                {sidebarLink?.icon ? (
+                  <NavLink to={sidebarLink?.linkto} className={'nav__items'}>
+                    {sidebarLink?.icon && (
+                      <div className="icons">
+                        <img src={sidebarLink?.icon} alt="" />
+                      </div>
+                    )}
+                    <p className="title">{sidebarLink?.title}</p>
                   </NavLink>
-                  <p className="title">{sidebarLink.title}</p>
-                </nav>
+                ) : (
+                  <p className="title">{sidebarLink?.title}</p>
+                )}
               </li>
             );
           })}
@@ -47,4 +49,3 @@ const Sidebar: React.FC = () => {
 };
 
 export default Sidebar;
-
