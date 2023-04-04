@@ -1,11 +1,15 @@
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import  Navbar  from './components/sharedlayouts/Navbar';
+import { Routes, Route } from 'react-router-dom'
+import ShareLayout from './components/sharedlayouts/ShareLayout';
 
 function App() {
   return (
-    <div>
-       <Navbar />
-    </div>
+    <>
+    <Routes>
+      <Route path='/dashboard' element={<ShareLayout />}>
+
+      </Route>
+    </Routes>
+    </>
   )
 }
 

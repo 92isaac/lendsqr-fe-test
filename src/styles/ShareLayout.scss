@@ -1,0 +1,11 @@
+.sharedLayout {
+    display: flex;
+  }
+  .sharedLayout__side {
+    width: 18%;
+    height: fit-content;
+  }
+  
+  .sharedLayout__body {
+    width: 82%;
+  }
