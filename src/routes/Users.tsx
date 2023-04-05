@@ -8,7 +8,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../styles/Users.scss'
-
+import { AiOutlineEye } from 'react-icons/ai'
+import blacklist from "../assets/icons/user-times 1.svg"
+import { RiUserUnfollowLine, RiUserFollowLine } from 'react-icons/ri'
 interface UserType {
   id: number;
   classes: string;
@@ -26,14 +28,26 @@ interface User {
   createdAt: string;
 }
 
+type Status = "active" | "Blacklisted" | "pending" | "inactive";
+
 const Users = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [showFilterModal, setShowFilterModel] = useState(false);
-
+  const [usersStatus, setUsersStatus] = useState<Status>("active");
+  const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
   const navigate = useNavigate();
   const handleClick = (id: number) => {
     navigate(`/dashboard/users/${id}`);
   };
+
+
+  const handleClickModal = (index: number) => {
+    setOpenModalIndex(index);
+  };
+
+  const  handleStatusChange=(newStatus: Status)=>{
+    setUsersStatus(newStatus);
+  }
   
   useEffect(() => {
     const getUserData = async () => {
@@ -123,26 +137,36 @@ const Users = () => {
                 </tr>
               </thead>
               <tbody>
-                {users.map((user: User) => {
+                {users.map((user: User, index: number) => {
+                  
                   return (
-                    <tr key={user.id} onClick={()=> handleClick(user.id)}>
+                    <tr key={user.id} onClick={()=> handleClick(user.id)} className="table__row">
                       <td>{user.orgName}</td>
                       <td>{user.userName}</td>
                       <td>{user.email}</td>
                       <td>{user.phoneNumber}</td>
                       <td>{user.createdAt}</td>
-                      <td>Pending</td>
+                      <td>{openModalIndex === index ?  usersStatus : usersStatus }</td>
                       <td>
-                        <BsThreeDotsVertical />
-                        <div>
-                          {/* modal */}
-                          <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                          </ul>
-                        </div>
+                        <BsThreeDotsVertical onClick={(e)=>
+                          {
+                            e.stopPropagation();
+                            handleClickModal(index);
+                           }} />
                       </td>
+                        {
+                          openModalIndex === index && (<div className="select__usertype">
+                          <ul>
+                            <li > <AiOutlineEye/>View Details</li>
+                            <li onClick={(e) => {
+                              e.stopPropagation();
+                              handleStatusChange("Blacklisted")}}> <RiUserUnfollowLine /> Blacklist User</li>
+                            <li onClick={(e) => {
+                              e.stopPropagation();
+                              handleStatusChange("active")}}>< RiUserFollowLine/> Activate User</li>
+                          </ul>
+                        </div>)
+                        }
                     </tr>
                   );
                 })}
