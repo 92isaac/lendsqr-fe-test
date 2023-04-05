@@ -1,0 +1,218 @@
+.users {
+  background-color: #e5e5e5;
+  font-family: "Work Sans", sans-serif;
+  height: 1060px;
+}
+
+.users__container {
+  padding-top: 30px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.typeOfusers {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.typeOfusers__card {
+  width: 200px;
+  height: 140px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+.typeOfusers__card .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.typeOfusers__card .icon img {
+  width: 22px;
+  height: 22px;
+  color: #df18ff;
+  opacity: 1;
+}
+.typeOfusers__card .user {
+  background-color: rgba(223, 24, 255, 0.1);
+}
+.typeOfusers__card .userActive {
+  background-color: rgba(87, 24, 255, 0.1);
+}
+.typeOfusers__card .loan {
+  background-color: rgba(245, 95, 68, 0.1);
+}
+.typeOfusers__card .money {
+  background: rgba(255, 51, 102, 0.1);
+}
+.typeOfusers__card .userType {
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #545f7d;
+}
+.typeOfusers__card .no_Ofusers {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #213f7d;
+}
+
+.users__body {
+  background-color: #ffffff;
+  margin-top: 40px;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 15px;
+  position: relative;
+}
+.users__body .users__table {
+  width: 100%;
+  padding: 20px;
+}
+.users__body .users__table .table__header {
+  display: flex;
+}
+.users__body .users__table .table__header > p {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #545f7d;
+  margin-top: 2px;
+  text-align: left;
+}
+.users__body .users__table .table__header .icon {
+  margin-left: 8px;
+}
+.users__body .users__table .table__header .icon > img {
+  cursor: pointer;
+}
+.users__body .users__table th {
+  padding-bottom: 15px;
+}
+.users__body .users__table td {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #545f7d;
+}
+.users__body .users__table td > svg {
+  cursor: pointer;
+}
+
+.users__filter {
+  margin-top: 15px;
+}
+.users__filter .users__display {
+  display: flex;
+  align-items: center;
+}
+.users__filter .users__display p {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #545f7d;
+  margin-right: 13px;
+}
+.users__filter .users__display .filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 40px;
+  background: rgba(33, 63, 125, 0.1);
+  margin-right: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.users__filter .users__display .filter svg {
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+.users__filterModal {
+  position: absolute;
+  width: 270px;
+  height: 580px;
+  top: 38px;
+  background: #ffffff;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+.users__filterModal .filterModal {
+  width: 85%;
+  margin: 30px auto;
+}
+.users__filterModal .input__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 17px;
+}
+.users__filterModal .input__field > label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 16px;
+  color: #545f7d;
+  margin-bottom: 7px;
+}
+.users__filterModal .input__field > input,
+.users__filterModal .input__field select {
+  padding: 0 15px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.2);
+  border-radius: 8px;
+}
+.users__filterModal .input__field > input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #545f7d;
+  opacity: 0.7;
+}
+.users__filterModal .input__field > input::placeholder {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #545f7d;
+  opacity: 0.7;
+}
+.users__filterModal .input__field option {
+  padding: 0 20px;
+}
+.users__filterModal .filter__btn {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+.users__filterModal .filter__btn button {
+  width: 98px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.users__filterModal .filter__btn .btn__reset {
+  color: #545f7d;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.users__filterModal .filter__btn .btn__filter {
+  background: #39cdcc;
+  border: 1px solid #39cdcc;
+  color: #ffffff;
+}/*# sourceMappingURL=Users.css.map */

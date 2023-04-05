@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
-import ShareLayout from './components/sharedlayouts/ShareLayout';
 import Login from './routes/Login';
+import { ShareLayout } from './components';
+import { Users } from './routes';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Login />} />
       <Route path='/dashboard' element={<ShareLayout />}>
+        <Route path='/dashboard/users' element={<Users />} />
       </Route>
     </Routes>
     </>
