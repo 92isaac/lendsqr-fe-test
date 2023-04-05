@@ -12,9 +12,18 @@ interface SidebarLink {
   linkto: string;
 }
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+  
   return (
-    <aside>
+    <aside  >
       <div className="sidebar__logo">
         <div className="logo">
           <div className="img__container">
@@ -22,22 +31,22 @@ const Sidebar: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="sidebar__links">
+      <div  className={`${isSidebarOpen ? "sidebar sidebar__links show-sidebar" : "sidebar sidebar__links"}`}>
         <ul>
           {sidebarLinks.map((sidebarLink: SidebarLink) => {
             return (
-              <li key={sidebarLink?.id} className={sidebarLink?.class}>
-                {sidebarLink?.icon ? (
-                  <NavLink to={sidebarLink?.linkto} className={'nav__items'}>
-                    {sidebarLink?.icon && (
+              <li key={sidebarLink.id} className={sidebarLink.class}>
+                {sidebarLink.icon ? (
+                  <NavLink to={sidebarLink.linkto} className="nav__items">
+                    {sidebarLink.icon && (
                       <div className="icons">
-                        <img src={sidebarLink?.icon} alt="" />
+                        <img src={sidebarLink.icon} alt="" />
                       </div>
                     )}
-                    <p className="title">{sidebarLink?.title}</p>
+                    <p className="title">{sidebarLink.title}</p>
                   </NavLink>
                 ) : (
-                  <p className="title">{sidebarLink?.title}</p>
+                  <p className="title">{sidebarLink.title}</p>
                 )}
               </li>
             );

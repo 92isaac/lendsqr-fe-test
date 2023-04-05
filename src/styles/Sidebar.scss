@@ -1,5 +1,6 @@
 aside {
     font-family: "Work Sans", sans-serif;
+   
     .sidebar__logo {
       height: 100px;
       display: flex;
@@ -20,6 +21,11 @@ aside {
     }
     .sidebar__links {
       box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s linear;
+      &.show-sidebar {
+        transform: translate(0);
+        z-index: 999;
+      }
   
       li {
         list-style: none;
@@ -69,6 +75,11 @@ aside {
         display: flex;
         align-items: center;
       }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      display: none;
     }
   }
   

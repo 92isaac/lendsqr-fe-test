@@ -21,6 +21,11 @@ aside .sidebar__logo .logo .img__container img {
 }
 aside .sidebar__links {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s linear;
+}
+aside .sidebar__links.show-sidebar {
+  transform: translate(0);
+  z-index: 999;
 }
 aside .sidebar__links li {
   list-style: none;
@@ -70,6 +75,11 @@ aside .sidebar__links .nav__items {
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
 .active {
   background: rgba(57, 205, 204, 0.06);
 }/*# sourceMappingURL=Sidebar.css.map */
