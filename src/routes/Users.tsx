@@ -13,6 +13,8 @@ import blacklist from "../assets/icons/user-times 1.svg";
 import { RiUserUnfollowLine, RiUserFollowLine } from "react-icons/ri";
 import { endpoint } from "../helpers/ApiEndpoint";
 import ApiRoutes from "../helpers/ApiRoutes";
+import Loading from "../helpers/Loading";
+import Error from "../helpers/Error";
 interface UserType {
   id: number;
   classes: string;
@@ -33,6 +35,8 @@ interface User {
 type Status = "active" | "Blacklisted" | "pending" | "inactive";
 
 const Users = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
   const [users, setUsers] = useState<User[]>([]);
   const [showFilterModal, setShowFilterModel] = useState(false);
   const [usersStatus, setUsersStatus] = useState<Status>("active");
@@ -55,17 +59,24 @@ const Users = () => {
 
   useEffect(() => {
     const getUserData = async () => {
+    try{
       const { data } = await axios.get<User[]>(endpoint
-       + ApiRoutes.user.users
-      );
-      setUsers(data.slice(0, 10));
+        + ApiRoutes.user.users
+       );
+       setUsers(data.slice(0, 10));
+       setIsLoading(false)
+    }catch(err:any){
+      setIsLoading(false)
+        setError(err.message)
+    }
     };
     getUserData();
   }, []);
 
   return (
     <>
-      <div className="users">
+      {isLoading ? (<Loading />) : (
+        <div className="users">
         <div className="users__container">
           <div className="users__header">
             <PageTitle title="Users" />
@@ -267,6 +278,9 @@ const Users = () => {
           </div>
         </div>
       </div>
+      )}
+
+      {error ? <Error message={error} /> : null}
     </>
   );
 };
