@@ -7,10 +7,12 @@ import { AiOutlineDown } from "react-icons/ai";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../styles/Users.scss'
-import { AiOutlineEye } from 'react-icons/ai'
-import blacklist from "../assets/icons/user-times 1.svg"
-import { RiUserUnfollowLine, RiUserFollowLine } from 'react-icons/ri'
+import "../styles/Users.scss";
+import { AiOutlineEye } from "react-icons/ai";
+import blacklist from "../assets/icons/user-times 1.svg";
+import { RiUserUnfollowLine, RiUserFollowLine } from "react-icons/ri";
+import { endpoint } from "../helpers/ApiEndpoint";
+import ApiRoutes from "../helpers/ApiRoutes";
 interface UserType {
   id: number;
   classes: string;
@@ -35,24 +37,26 @@ const Users = () => {
   const [showFilterModal, setShowFilterModel] = useState(false);
   const [usersStatus, setUsersStatus] = useState<Status>("active");
   const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
+
   const navigate = useNavigate();
+
+  
   const handleClick = (id: number) => {
     navigate(`/dashboard/users/${id}`);
   };
-
 
   const handleClickModal = (index: number) => {
     setOpenModalIndex(index);
   };
 
-  const  handleStatusChange=(newStatus: Status)=>{
+  const handleStatusChange = (newStatus: Status) => {
     setUsersStatus(newStatus);
-  }
-  
+  };
+
   useEffect(() => {
     const getUserData = async () => {
-      const { data } = await axios.get<User[]>(
-        "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users"
+      const { data } = await axios.get<User[]>(endpoint
+       + ApiRoutes.user.users
       );
       setUsers(data.slice(0, 10));
     };
@@ -138,35 +142,56 @@ const Users = () => {
               </thead>
               <tbody>
                 {users.map((user: User, index: number) => {
-                  
                   return (
-                    <tr key={user.id} onClick={()=> handleClick(user.id)} className="table__row">
+                    <tr
+                      key={user.id}
+                      onClick={() => handleClick(user.id)}
+                      className="table__row"
+                    >
                       <td>{user.orgName}</td>
                       <td>{user.userName}</td>
                       <td>{user.email}</td>
                       <td>{user.phoneNumber}</td>
                       <td>{user.createdAt}</td>
-                      <td>{openModalIndex === index ?  usersStatus : usersStatus }</td>
                       <td>
-                        <BsThreeDotsVertical onClick={(e)=>
-                          {
+                        {openModalIndex === index ? usersStatus : usersStatus}
+                      </td>
+                      <td>
+                        <BsThreeDotsVertical
+                          onClick={(e) => {
                             e.stopPropagation();
                             handleClickModal(index);
-                           }} />
+                          }}
+                        />
                       </td>
-                        {
-                          openModalIndex === index && (<div className="select__usertype">
+                      {openModalIndex === index && (
+                        <div className="select__usertype">
                           <ul>
-                            <li > <AiOutlineEye/>View Details</li>
-                            <li onClick={(e) => {
-                              e.stopPropagation();
-                              handleStatusChange("Blacklisted")}}> <RiUserUnfollowLine /> Blacklist User</li>
-                            <li onClick={(e) => {
-                              e.stopPropagation();
-                              handleStatusChange("active")}}>< RiUserFollowLine/> Activate User</li>
+                            <li>
+                              {" "}
+                              <AiOutlineEye />
+                              View Details
+                            </li>
+                            <li
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleStatusChange("Blacklisted");
+                              }}
+                            >
+                              {" "}
+                              <RiUserUnfollowLine /> Blacklist User
+                            </li>
+                            <li
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleStatusChange("active");
+                              }}
+                            >
+                              <RiUserFollowLine /> Activate User
+                            </li>
                           </ul>
-                        </div>)
-                        }
+                        </div>
+                      )}
                     </tr>
                   );
                 })}
@@ -177,7 +202,7 @@ const Users = () => {
                 <form className="filterModal">
                   <div className="input__field">
                     <label htmlFor="Organisation">Organisation</label>
-                    <select id='Organisation'>
+                    <select id="Organisation">
                       <option value="grapefruit">Grapefruit</option>
                       <option value="lime">Lime</option>
                       <option selected value="coconut">
@@ -196,7 +221,7 @@ const Users = () => {
                   </div>
                   <div className="input__field">
                     <label htmlFor="Date">Date</label>
-                    <input type="date" id='Date' />
+                    <input type="date" id="Date" />
                   </div>
                   <div className="input__field">
                     <label htmlFor="PhoneNumber">Phone Number</label>
@@ -205,12 +230,12 @@ const Users = () => {
                   <div className="input__field">
                     <label htmlFor="status">Status</label>
                     <select id="status">
-                      <option value="grapefruit">Grapefruit</option>
-                      <option value="lime">Lime</option>
-                      <option selected value="coconut">
-                        Coconut
+                      <option value="Pending">Pending</option>
+                      <option value="Active">Active</option>
+                      <option selected value="Inactive">
+                        Inactive
                       </option>
-                      <option value="mango">Mango</option>
+                      <option value="Blacklisted">Blacklisted</option>
                     </select>
                   </div>
                   <div className="filter__btn">
@@ -246,4 +271,4 @@ const Users = () => {
   );
 };
 
-export default Users
+export default Users;
