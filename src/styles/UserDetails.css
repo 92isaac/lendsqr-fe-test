@@ -5,7 +5,7 @@
 }
 
 .userdetail__container {
-  padding-top: 40px;
+  padding-top: 18px;
   width: 90%;
   margin: 0 auto;
 }
@@ -13,7 +13,7 @@
 .previous__page {
   display: flex;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .previous__page > img {
   cursor: pointer;
@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 35px;
 }
 .pageHero .pageHero__btns > button {
   width: 170px;
@@ -55,8 +55,6 @@
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
 }
 
 .userdetailOverview__container {

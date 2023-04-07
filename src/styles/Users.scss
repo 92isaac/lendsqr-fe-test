@@ -1,7 +1,7 @@
 .users {
     background-color: #e5e5e5;
     font-family: "Work Sans", sans-serif;
-    height: 1060px;
+    // height: 1060px;
   }
   .users__container {
     padding-top: 30px;
@@ -138,6 +138,8 @@
     }
   }
   .users__filter {
+    display: flex;
+    justify-content: space-between;
     margin-top: 15px;
     .users__display {
       display: flex;
@@ -234,6 +236,85 @@
         background: #39cdcc;
         border: 1px solid #39cdcc;
         color: #ffffff;
+      }
+    }
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin-top: 1rem;
+  
+    button {
+      margin: 0 0.5rem;
+      padding:1rem 1rem ;
+      // width: 15px;
+      // height: 15px;
+      border: none;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #eee;
+      cursor: pointer;
+  
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+  
+      &.active {
+        background-color: #007bff;
+        color: #fff;
+      }
+      >svg{
+        display: inline;
+        align-items: center;
+        font-size: 25px;
+      }
+    }
+  
+    .ellipsis {
+      margin: 0 0.5rem;
+    }
+  }
+  
+  
+  .users__body {
+    overflow-x: auto;
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      
+    }
+  
+    @media screen and (max-width: 768px) {
+      table {
+        display: block;
+        overflow-x: auto;
+  
+        thead {
+          display: none;
+        }
+  
+        tbody {
+          display: block;
+          width: auto;
+          white-space: nowrap;
+  
+          tr {
+            display: inline-block;
+          }
+  
+          td {
+            display: block;
+            text-align: right;
+          }
+  
+          td:first-child {
+            text-align: left;
+          }
+        }
       }
     }
   }
