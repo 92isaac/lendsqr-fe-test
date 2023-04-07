@@ -81,8 +81,30 @@ aside {
     .sidebar {
       display: none;
     }
+    .close-btn{
+      display: block;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      background-color: transparent;
+      width: 60px;
+      height: 50px;
+      cursor: pointer;
+    }
   }
   
   .active{
     background: rgba(57, 205, 204, 0.06);
+  }
+
+  .close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: transparent;
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+   
   }

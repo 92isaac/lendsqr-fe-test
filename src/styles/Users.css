@@ -1,7 +1,6 @@
 .users {
   background-color: #e5e5e5;
   font-family: "Work Sans", sans-serif;
-  height: 1060px;
 }
 
 .users__container {
@@ -138,6 +137,8 @@
 }
 
 .users__filter {
+  display: flex;
+  justify-content: space-between;
   margin-top: 15px;
 }
 .users__filter .users__display {
@@ -239,4 +240,104 @@
   background: #39cdcc;
   border: 1px solid #39cdcc;
   color: #ffffff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination button {
+  margin: 0 0.5rem;
+  padding: 1rem 1rem;
+  border: none;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #eee;
+  cursor: pointer;
+}
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+.pagination button > svg {
+  display: inline;
+  align-items: center;
+  font-size: 25px;
+}
+.pagination .ellipsis {
+  margin: 0 0.5rem;
+}
+
+.users__body {
+  overflow-x: auto;
+}
+.users__body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+@media screen and (max-width: 768px) {
+  .users__body table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .typeOfusers__card {
+    width: 100px;
+    height: 100px;
+    background: #ffffff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  .typeOfusers__card .icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .typeOfusers__card .icon img {
+    width: 16px;
+    height: 16px;
+    color: #df18ff;
+    opacity: 1;
+  }
+  .typeOfusers__card .user {
+    background-color: rgba(223, 24, 255, 0.1);
+  }
+  .typeOfusers__card .userActive {
+    background-color: rgba(87, 24, 255, 0.1);
+  }
+  .typeOfusers__card .loan {
+    background-color: rgba(245, 95, 68, 0.1);
+  }
+  .typeOfusers__card .money {
+    background: rgba(255, 51, 102, 0.1);
+  }
+  .typeOfusers__card .userType {
+    font-weight: 500;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: #545f7d;
+  }
+  .typeOfusers__card .no_Ofusers {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #213f7d;
+    margin: 0px;
+  }
 }/*# sourceMappingURL=Users.css.map */

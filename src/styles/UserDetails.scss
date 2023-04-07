@@ -58,6 +58,7 @@
   .userdetailOverview__container {
     display: flex;
     width: 70%;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
     .user__info {
@@ -178,3 +179,62 @@
     }
   }
   
+  
+  .users__body {
+    overflow-x: auto;
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      
+    }
+  
+    @media screen and (max-width: 768px) {
+
+      
+      table {
+        display: block;
+        overflow-x: auto;
+  
+        thead {
+          display: none;
+        }
+  
+        tbody {
+          display: block;
+          width: auto;
+          white-space: nowrap;
+  
+          tr {
+            display: inline-block;
+          }
+  
+          td {
+            display: block;
+            text-align: right;
+          }
+  
+          td:first-child {
+            text-align: left;
+          }
+        }
+      }
+
+    
+    }
+    
+  }
+  
+  @media screen and (max-width: 768px) {
+    .pageHero, .pageHero__btns{
+      display: block;
+    }
+
+    .pageHero__btns button{
+      margin-bottom: 16px;
+    }
+
+    .userDetail__Nav ul{
+      display: block;
+    }
+  }

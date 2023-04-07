@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo.svg";
 import "../../styles/Sidebar.scss";
+import { FaTimes } from "react-icons/fa";
 import { sidebarLinks } from "../../helpers/SidebarLinks";
 
 interface SidebarLink {
@@ -31,6 +32,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, setIsSidebarOpen }) =>
           </div>
         </div>
       </div>
+      <button className="close-btn" title="button" onClick={closeSidebar}>
+            <FaTimes />
+          </button>
       <div  className={`${isSidebarOpen ? "sidebar sidebar__links show-sidebar" : "sidebar sidebar__links"}`}>
         <ul>
           {sidebarLinks.map((sidebarLink: SidebarLink) => {

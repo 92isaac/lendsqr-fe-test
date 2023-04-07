@@ -3,8 +3,17 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import "../../styles/Navbar.css";
 import profileImg from "../../assets/image 4.png";
+import { FaBars } from "react-icons/fa";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setIsSidebarOpen }) => {
+  const openSideBar = () => {
+    setIsSidebarOpen(true);
+  };
   return (
     <header>
       <div className="navbar">
@@ -13,7 +22,7 @@ const Navbar: React.FC = () => {
             <div className="form-details">
               <input type="text" placeholder="Search for anything" />
               <button title="Search">
-                <AiOutlineSearch /> 
+                <AiOutlineSearch />
               </button>
             </div>
           </form>
@@ -35,6 +44,13 @@ const Navbar: React.FC = () => {
                 alt="profile img"
               />
               <p className="username">Adedeji</p>
+              <button
+                title="menu"
+                className=" nav-toggle"
+                onClick={openSideBar}
+              >
+                <FaBars />
+              </button>
             </li>
           </ul>
         </div>

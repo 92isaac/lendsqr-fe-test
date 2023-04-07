@@ -66,6 +66,7 @@
       text-transform: uppercase;
       color: #213f7d;
     }
+    
   }
   .users__body {
     background-color: #ffffff;
@@ -292,30 +293,65 @@
       table {
         display: block;
         overflow-x: auto;
-  
-        thead {
-          display: none;
-        }
-  
-        tbody {
-          display: block;
-          width: auto;
-          white-space: nowrap;
-  
-          tr {
-            display: inline-block;
-          }
-  
-          td {
-            display: block;
-            text-align: right;
-          }
-  
-          td:first-child {
-            text-align: left;
-          }
-        }
       }
+      
     }
   }
   
+  @media screen and (max-width: 768px) {
+    .typeOfusers__card{
+    width: 100px;
+    height: 100px;
+    background: #ffffff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 20px;
+  
+    .icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 16px;
+        height: 16px;
+        color: #df18ff;
+        opacity: 1;
+      }
+    }
+    .user {
+      background-color: rgba(223, 24, 255, 0.1);
+    }
+    .userActive {
+      background-color: rgba(87, 24, 255, 0.1);
+    }
+    .loan {
+      background-color: rgba(245, 95, 68, 0.1);
+    }
+    .money {
+      background: rgba(255, 51, 102, 0.1);
+    }
+  
+    .userType {
+      font-weight: 500;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      color: #545f7d;
+    }
+    .no_Ofusers {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #213f7d;
+      margin: 0px;
+    }
+    }
+
+  }

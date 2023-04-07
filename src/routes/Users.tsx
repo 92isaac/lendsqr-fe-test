@@ -89,67 +89,6 @@ const Users = () => {
     setCurrentPage(pageNumber);
   };
 
-  // // Generate page numbers
-  // const pageNumbers: number[] = [];
-  // for (let i = 1; i <= totalPages; i++) {
-  //   pageNumbers.push(i);
-  // }
-
-  // // Render pagination buttons
-  // const renderPaginationButtons = () => {
-  //   const maxButtonsToShow = 5;
-  //   const buttonsToShow = [];
-
-  //   if (totalPages <= maxButtonsToShow) {
-  //     buttonsToShow.push(...pageNumbers);
-  //   } else {
-  //     const firstPage = currentPage - 2;
-  //     const lastPage = currentPage + 2;
-
-  //     if (firstPage <= 2) {
-  //       buttonsToShow.push(...pageNumbers.slice(0, maxButtonsToShow - 1));
-  //       buttonsToShow.push("...");
-  //       buttonsToShow.push(totalPages);
-  //     } else if (lastPage >= totalPages - 1) {
-  //       buttonsToShow.push(1);
-  //       buttonsToShow.push("...");
-  //       buttonsToShow.push(
-  //         ...pageNumbers.slice(
-  //           totalPages - maxButtonsToShow + 2,
-  //           totalPages + 1
-  //         )
-  //       );
-  //     } else {
-  //       buttonsToShow.push(1);
-  //       buttonsToShow.push("...");
-  //       buttonsToShow.push(...pageNumbers.slice(firstPage, lastPage + 1));
-  //       buttonsToShow.push("...");
-  //       buttonsToShow.push(totalPages);
-  //     }
-  //   }
-
-  //   return buttonsToShow.map((pageNumber) => {
-  //     if (pageNumber === "...") {
-  //       return (
-  //         <span key={pageNumber} className="pagination__ellipsis">
-  //           ...
-  //         </span>
-  //       );
-  //     }
-
-  //     return (
-  //       <button
-  //         key={pageNumber}
-  //         className={`pagination__button ${
-  //           pageNumber === currentPage ? "pagination__button--active" : ""
-  //         }`}
-  //         onClick={() => handlePageChange(pageNumber as number)}
-  //       >
-  //         {pageNumber}
-  //       </button>
-  //     );
-  //   });
-  // };
 
   return (
     <>

@@ -1,7 +1,6 @@
 .userdetail {
   background-color: #e5e5e5;
   font-family: "Work Sans", sans-serif;
-  height: 1060px;
 }
 
 .userdetail__container {
@@ -13,7 +12,7 @@
 .previous__page {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .previous__page > img {
   cursor: pointer;
@@ -26,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 .pageHero .pageHero__btns > button {
   width: 170px;
@@ -60,8 +59,9 @@
 .userdetailOverview__container {
   display: flex;
   width: 70%;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 30px;
+  padding: 20px;
 }
 .userdetailOverview__container .user__info {
   display: flex;
@@ -71,8 +71,8 @@
   padding-right: 50px;
 }
 .userdetailOverview__container .user__info .img__container {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 .userdetailOverview__container .user__info .img__container img {
   width: 100%;
@@ -86,7 +86,7 @@
 }
 .userdetailOverview__container .user__info .userName h2 {
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #213f7d;
 }
 .userdetailOverview__container .user__info .userName > p {
@@ -108,7 +108,7 @@
 .userdetailOverview__container .user__account > p:first-child {
   padding-top: 17px;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #213f7d;
 }
 .userdetailOverview__container .user__account > p:last-child {
@@ -129,7 +129,7 @@
 .userDetail__Nav li {
   list-style: none;
   font-weight: 400;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #213f7d;
   cursor: pointers;
 }
@@ -149,7 +149,7 @@
 }
 .userdetail__body > h1 {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #213f7d;
   padding-top: 30px;
 }
@@ -174,7 +174,51 @@
 }
 .userdetail__body .personal__info .info__details > p {
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #545f7d;
   text-transform: capitalize;
+}
+
+.users__body {
+  overflow-x: auto;
+}
+.users__body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+@media screen and (max-width: 768px) {
+  .users__body table {
+    display: block;
+    overflow-x: auto;
+  }
+  .users__body table thead {
+    display: none;
+  }
+  .users__body table tbody {
+    display: block;
+    width: auto;
+    white-space: nowrap;
+  }
+  .users__body table tbody tr {
+    display: inline-block;
+  }
+  .users__body table tbody td {
+    display: block;
+    text-align: right;
+  }
+  .users__body table tbody td:first-child {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pageHero, .pageHero__btns {
+    display: block;
+  }
+  .pageHero__btns button {
+    margin-bottom: 16px;
+  }
+  .userDetail__Nav ul {
+    display: block;
+  }
 }/*# sourceMappingURL=UserDetails.css.map */
