@@ -288,9 +288,12 @@
 }
 
 @media screen and (max-width: 768px) {
+  .typeOfusers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   .typeOfusers__card {
-    width: 100px;
-    height: 100px;
+    width: 55%;
     background: #ffffff;
     border: 1px solid rgba(33, 63, 125, 0.06);
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -364,5 +367,35 @@
     display: inline;
     font-size: 20px;
     margin-right: 10px;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pagination button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 0.5rem;
+    border: none;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #eee;
+    cursor: pointer;
+  }
+  .pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .pagination button > svg {
+    display: inline;
+    align-items: center;
+    font-size: 25px;
+  }
+  .pagination .ellipsis {
+    margin: 0 0.5rem;
   }
 }/*# sourceMappingURL=Users.css.map */
