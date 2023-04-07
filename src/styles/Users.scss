@@ -354,4 +354,32 @@
     }
     }
 
+    .table__row{
+      position: relative;
+      .select__usertype{
+          position: absolute;
+          width: 200px;
+          min-height: 100px;
+          background: #FFFFFF;
+          left: 79%;
+          top: 75%;
+          z-index: 9999;
+          box-shadow: 3px 5px 20px 0px #0000000A;
+
+          li{
+              cursor: pointer;
+              list-style-type: none;
+              line-height: 30px;
+              display: flex;
+              align-items: center;
+              >svg, >img{
+                  
+                  display: inline;
+                  font-size: 20px;
+                  margin-right: 10px;
+              }
+          }
+      }
+    }
+
   }

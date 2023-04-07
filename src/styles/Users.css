@@ -340,4 +340,29 @@
     color: #213f7d;
     margin: 0px;
   }
+  .table__row {
+    position: relative;
+  }
+  .table__row .select__usertype {
+    position: absolute;
+    width: 200px;
+    min-height: 100px;
+    background: #FFFFFF;
+    left: 79%;
+    top: 75%;
+    z-index: 9999;
+    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.0392156863);
+  }
+  .table__row .select__usertype li {
+    cursor: pointer;
+    list-style-type: none;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+  }
+  .table__row .select__usertype li > svg, .table__row .select__usertype li > img {
+    display: inline;
+    font-size: 20px;
+    margin-right: 10px;
+  }
 }/*# sourceMappingURL=Users.css.map */

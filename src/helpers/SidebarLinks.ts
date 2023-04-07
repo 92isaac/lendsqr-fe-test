@@ -49,7 +49,7 @@ interface SidebarLink {
   {
     id: 3,
     icon: usersFriends,
-    linkto:"/",
+    linkto:"/dashboard/users",
     title: "Users",
     class: "links",
   },
