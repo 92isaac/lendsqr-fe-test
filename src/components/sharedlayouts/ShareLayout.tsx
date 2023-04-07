@@ -4,7 +4,12 @@ import '../../styles/ShareLayout.scss'
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
-const ShareLayout: React.FC = () => {
+interface SidebarProps {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const ShareLayout: React.FC<SidebarProps> = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
@@ -15,7 +20,7 @@ const ShareLayout: React.FC = () => {
         isSidebarOpen={isSidebarOpen}/>
         </div>
         <div className="sharedLayout__body">
-          <Navbar />
+          <Navbar setIsSidebarOpen={setIsSidebarOpen} isSidebarOpen={false}/>
           <Outlet />
         </div>
       </div>

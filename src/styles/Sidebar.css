@@ -1,5 +1,6 @@
 aside {
   font-family: "Work Sans", sans-serif;
+  color: #213F7D;
 }
 aside .sidebar__logo {
   height: 100px;
@@ -22,6 +23,7 @@ aside .sidebar__logo .logo .img__container img {
 aside .sidebar__links {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
   transition: all 0.3s linear;
+  color: #213F7D;
 }
 aside .sidebar__links.show-sidebar {
   transform: translate(0);
@@ -73,6 +75,7 @@ aside .sidebar__links .nav__items {
   margin: 0 auto;
   display: flex;
   align-items: center;
+  color: #213F7D;
 }
 
 @media screen and (max-width: 768px) {
@@ -92,15 +95,4 @@ aside .sidebar__links .nav__items {
 }
 .active {
   background: rgba(57, 205, 204, 0.06);
-}
-
-.close-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  background-color: transparent;
-  width: 60px;
-  height: 50px;
-  cursor: pointer;
 }/*# sourceMappingURL=Sidebar.css.map */

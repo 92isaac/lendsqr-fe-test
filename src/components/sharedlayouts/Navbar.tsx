@@ -5,12 +5,12 @@ import "../../styles/Navbar.css";
 import profileImg from "../../assets/image 4.png";
 import { FaBars } from "react-icons/fa";
 
-interface NavbarProps {
+interface SidebarProps {
   isSidebarOpen: boolean;
   setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ setIsSidebarOpen }) => {
+const Navbar: React.FC<SidebarProps> = ({ setIsSidebarOpen }) => {
   const openSideBar = () => {
     setIsSidebarOpen(true);
   };
